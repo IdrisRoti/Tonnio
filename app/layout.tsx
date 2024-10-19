@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "HR dashboard",
@@ -16,10 +17,11 @@ export default function RootLayout({
       <body
         className={` antialiased`}
       >
-        <main className="text-black">
-        <p>Root Layout</p>
-           {children}
-        </main>
+        <ThemeProvider>
+          <div className="text-black dark:text-white">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
