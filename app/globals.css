@@ -10,12 +10,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .border-color {
+    @apply border-[var(--foreground)];
+  }
 }
 
 @layer base {
   :root {
-    --background: #f1f5f9;
-    --foreground: #fff;
+    --background: #fff;
+    --foreground: #ebeced;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -42,7 +45,7 @@ body {
   }
   .dark {
     --background: #101010;
-    --foreground: #1a1a1a;
+    --foreground: #2f2f2f;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;

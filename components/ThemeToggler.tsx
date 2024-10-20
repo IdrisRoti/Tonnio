@@ -29,9 +29,11 @@ export default function ThemeToggler() {
   return (
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger className='outline-none'>Open</DropdownMenuTrigger>
-          <DropdownMenuContent className={cn('w-60 border shadow', darkMode && "bg-[#202020] border-gray-700")}>
+          <DropdownMenuContent className={cn('w-60 border shadow', 
+            darkMode ? "bg-[#202020] border-[#2f2f2f]" : "bg-background"
+          )}>
               <DropdownMenuLabel className={cn("font-normal", darkMode && "text-background")}>Theme</DropdownMenuLabel>
-              <DropdownMenuItem className={cn(darkMode ? "focus:bg-zinc-700 focus:text-background" : "focus:bg-gray-200")} asChild>
+              <DropdownMenuItem className={cn(darkMode ? "focus:bg-[#2f2f2f] focus:text-background" : "focus:bg-[#ebeced]")} asChild>
                 <button
                   className={cn('w-full text-left cursor-pointer text-sm flex items-center',darkMode && "text-background")} 
                   onClick={handleSetLightMode}
@@ -42,12 +44,12 @@ export default function ThemeToggler() {
                   </span>
                 </button>
               </DropdownMenuItem>
-              <DropdownMenuItem className={cn(darkMode ? "focus:bg-zinc-700 focus:text-background" : "focus:bg-gray-200")} asChild>
+              <DropdownMenuItem className={cn(darkMode ? "focus:bg-[#2f2f2f] focus:text-background" : "focus:bg-[#ebeced]")} asChild>
                 <button
                   className={cn('w-full text-left cursor-pointer text-sm flex items-center',darkMode && "text-background")} 
                   onClick={handleSetDarkMode}
                 >
-                  <div className={cn('size-1.5 bg-[#101010] dark:bg-[#f1f5f9] rounded-full mr-2 bg-foreground', !darkMode && "opacity-0")} />
+                  <div className={cn('size-1.5 bg-[#101010] dark:bg-background rounded-full mr-2 bg-foreground', !darkMode && "opacity-0")} />
                   <span className=''>
                     Dark
                   </span>

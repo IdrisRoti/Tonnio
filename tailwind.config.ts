@@ -10,6 +10,16 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		container: {
+			center: true,
+			padding: "20px"
+		},
+		screens: {
+			sm: "px",
+			md: "768px",
+			lg: "1024px",
+			xl: "1200px"
+		},
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
