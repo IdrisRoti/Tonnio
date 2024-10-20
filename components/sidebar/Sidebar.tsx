@@ -17,6 +17,10 @@ export default function Sidebar() {
 
   const pathname = usePathname()
 
+  if(pathname.includes("new-organization")){
+    return null
+  }
+
   return (
       <aside className={cn('border-r-2 border-color bg-background transition', showSideBar ? "w-[20rem]" : "w-[5rem]")}>
         <div className={cn('h-16 border-b-2 border-color px-4 flex items-center justify-between font-semibold text-xl', !showSideBar && "flex flex-col items-center justify-center")}>
@@ -31,12 +35,12 @@ export default function Sidebar() {
             <FrameIcon className='w-3 h-3' />
           </div>
           <div className={cn("ml-2", !showSideBar && "hidden")}>
-            <h3 className='text-xs dark:text-white/80'>Your Organisation</h3>
+            <h3 className='text-xs text-muted-foreground'>Your Organisation</h3>
             <h2 className='font-semibold'>Cookie Inc.</h2>
           </div>
         </div>
         {/* Links */}
-        <nav className={cn('flex flex-col p-4 gap-2 text-black/80 dark:text-white/60', !showSideBar && "items-center")}>
+        <nav className={cn('flex flex-col p-4 gap-2 text-muted-foreground', !showSideBar && "items-center")}>
           {
             DashboardSidebarLinks.map((link)=>{
               const Icon = link.icon;

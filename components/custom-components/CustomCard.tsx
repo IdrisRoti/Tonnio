@@ -7,7 +7,7 @@ type TCustomCard = {
 
 export default function CustomCard({children, className}: TCustomCard) {
   return (
-    <div className={cn("border bg-background shadow", className)}>
+    <div className={cn("border-2 border-color bg-[#202020] shadow", className)}>
         {children}
     </div>
   )
