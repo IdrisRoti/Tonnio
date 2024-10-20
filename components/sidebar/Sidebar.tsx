@@ -22,11 +22,11 @@ export default function Sidebar() {
   }
 
   return (
-      <aside className={cn('border-r-2 border-color bg-background transition', showSideBar ? "w-[20rem]" : "w-[5rem]")}>
+      <aside className={cn('border-r-2 border-color bg-foreground dark:bg-background transition', showSideBar ? "w-[20rem]" : "w-[5rem]")}>
         <div className={cn('h-16 border-b-2 border-color px-4 flex items-center justify-between font-semibold text-xl', !showSideBar && "flex flex-col items-center justify-center")}>
           <span className={cn(!showSideBar && "hidden")}>Tonnio</span>
           <button 
-           onClick={()=> setShowSidebar(prev=>!prev)} className='font-semibold transition hover:bg-foreground h-8 aspect-square grid place-items-center rounded-md'>
+           onClick={()=> setShowSidebar(prev=>!prev)} className='font-semibold transition hover:bg-muted dark:hover:bg-foreground h-8 aspect-square grid place-items-center rounded-md'>
             <BsLayoutSidebar className='w-4 h-4'/>
           </button>
         </div>
@@ -53,8 +53,8 @@ export default function Sidebar() {
                     <Link 
                       {...(link.subLinks != null && {onClick: ()=>setSubLink(prev => prev === link.href ? null : link.href)})}
                       href={link.href}
-                      className={cn('flex gap-2 items-center p-2 px-2 rounded-sm hover:bg-foreground transition w-full', 
-                        isActive && "font-semibold bg-foreground text-primary",
+                      className={cn('flex gap-2 items-center p-2 px-2 rounded-sm hover:bg-muted dark:hover:bg-foreground transition w-full', 
+                        isActive && "font-semibold bg-muted dark:bg-foreground text-primary",
                         showSideBar ? "justify-between" : "justify-center"
                       )}
                     >
@@ -84,7 +84,7 @@ export default function Sidebar() {
                         > 
                           {link.subLinks.map((sublink)=>{
                             return (
-                              <Link className='py-1.5 px-2 text-sm rounded-sm hover:bg-foreground transition block' key={sublink.label} href={sublink.href}>{sublink.label}</Link>
+                              <Link className='py-1.5 px-2 text-sm rounded-sm hover:bg-muted dark:hover:bg-foreground transition block' key={sublink.label} href={sublink.href}>{sublink.label}</Link>
                           )
                           })}
                         </div>

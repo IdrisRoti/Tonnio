@@ -30,7 +30,7 @@ export default function ThemeToggler() {
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger className='outline-none'>Open</DropdownMenuTrigger>
           <DropdownMenuContent className={cn('w-60 border shadow', 
-            darkMode ? "bg-[#202020] border-[#2f2f2f]" : "bg-background"
+            darkMode ? "bg-[#202020] border-[#2f2f2f]" : "bg-foreground"
           )}>
               <DropdownMenuLabel className={cn("font-normal", darkMode && "text-background")}>Theme</DropdownMenuLabel>
               <DropdownMenuItem className={cn(darkMode ? "focus:bg-[#2f2f2f] focus:text-background" : "focus:bg-[#ebeced]")} asChild>
