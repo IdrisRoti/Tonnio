@@ -31,7 +31,7 @@ export default function Sidebar() {
             <FrameIcon className='w-3 h-3' />
           </div>
           <div className={cn("ml-2", !showSideBar && "hidden")}>
-            <h3 className='text-xs text-white/80'>Your Organisation</h3>
+            <h3 className='text-xs dark:text-white/80'>Your Organisation</h3>
             <h2 className='font-semibold'>Cookie Inc.</h2>
           </div>
         </div>
