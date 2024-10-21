@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type TCustomCard = {
     children: React.ReactNode;
-    className?: String;
+    className?: string;
 }
 
 export default function CustomCard({children, className}: TCustomCard) {
