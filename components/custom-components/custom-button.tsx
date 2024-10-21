@@ -10,8 +10,7 @@ type TCustomButton = {
     loading?: boolean;
 }
 
-export default function CustomButton(
-    {
+export default function CustomButton({
         children, 
         className, 
         variant="outline", 
@@ -24,7 +23,7 @@ export default function CustomButton(
                 <button
                     disabled={loading}
                     type={type}
-                    className={cn("border-[1.5px] rounded-md transition disabled:pointer-events-none",
+                    className={cn("border-[1.5px] rounded-md transition disabled:pointer-events-none disabled:opacity-60 flex items-center",
                         variant === "outline" && "border-color hover:border-black/40 dark:hover:border-white/60",
                         variant === "fill" && "border-primary bg-primary-foreground hover:bg-primary text-white",
                         size ===  "small" && "text-xs py-1 px-3",
@@ -32,7 +31,7 @@ export default function CustomButton(
                         className,
                     )}
                 >
-                    {loading ? <FiLoader className="animate-spin" /> : children}
+                    {loading && <FiLoader className="animate-spin mr-2" />} {children}
                 </button>
             )
 }

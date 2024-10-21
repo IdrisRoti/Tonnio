@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+
 import ThemeProvider from "@/providers/ThemeProvider";
+
+const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "HR dashboard",
@@ -15,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body
-        className={` antialiased`}
+        className={`${dmsans.className} antialiased`}
       >
         <ThemeProvider>
           <div className="text-black dark:text-white">

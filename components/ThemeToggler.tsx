@@ -11,7 +11,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 import ThemeContext from '@/context/ThemeContext'
 import { cn } from '@/lib/utils';
+import CustomCard from './custom-components/custom-card';
 
+import { GrMenu } from "react-icons/gr";
 
 export default function ThemeToggler() {
     const {darkMode, setDarkMode} = useContext(ThemeContext)
@@ -28,7 +30,11 @@ export default function ThemeToggler() {
 
   return (
       <DropdownMenu modal={false}>
-        <DropdownMenuTrigger className='outline-none'>Open</DropdownMenuTrigger>
+        <DropdownMenuTrigger className='outline-none'>
+            <CustomCard className='p-2 rounded-md'>
+              <GrMenu className=' ' />
+            </CustomCard>
+        </DropdownMenuTrigger>
           <DropdownMenuContent className={cn('w-60 border shadow', 
             darkMode ? "bg-[#202020] border-[#2f2f2f]" : "bg-foreground"
           )}>
