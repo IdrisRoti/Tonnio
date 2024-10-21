@@ -6,6 +6,8 @@ import { cn } from '@/lib/utils';
 import { FrameIcon } from '@radix-ui/react-icons'
 import { FiChevronRight } from "react-icons/fi";
 import { BsLayoutSidebar } from "react-icons/bs";
+
+import { motion } from "framer-motion"
  
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -21,8 +23,22 @@ export default function Sidebar() {
     return null
   }
 
+  const variants = {
+    initial: {
+      width: "80px",
+    },
+    animate: {
+      width: "320px",
+    },
+  }
+
   return (
-      <aside className={cn('border-r-2 border-color bg-foreground dark:bg-background transition', showSideBar ? "w-[20rem]" : "w-[5rem]")}>
+      <motion.aside 
+        variants={variants} 
+        initial="initial" 
+        animate={showSideBar ? "animate" : "initial"} 
+        className={cn('border-r-2 border-color bg-foreground dark:bg-background transition')}
+      >
         <div className={cn('h-16 border-b-2 border-color px-4 flex items-center justify-between font-semibold text-xl', !showSideBar && "flex flex-col items-center justify-center")}>
           <span className={cn(!showSideBar && "hidden")}>Tonnio</span>
           <button 
@@ -95,6 +111,6 @@ export default function Sidebar() {
             })
           }
         </nav>
-      </aside>
+      </motion.aside>
   )
 }
