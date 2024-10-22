@@ -52,7 +52,7 @@ export default function NewOrganizationForm() {
     }
 
   return (
-    <CustomCard className="w-[90%] md:w-[45rem] lg:w-[50rem] mx-auto relative border-color rounded-md mt-10 mb-6">
+    <CustomCard className="w-[90%] md:w-[45rem] lg:w-[50rem] mx-auto relative border-color rounded-md mt-10">
         <form onSubmit={handleSubmit(onSubmit)}>
             <header className='border-b-2 border-color py-4 px-6'>
                 <h2 className=''>Set up your organization</h2>

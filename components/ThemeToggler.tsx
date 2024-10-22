@@ -39,7 +39,7 @@ export default function ThemeToggler() {
             darkMode ? "bg-[#202020] border-[#2f2f2f]" : "bg-foreground"
           )}>
               <DropdownMenuLabel className={cn("font-normal", darkMode && "text-background")}>Theme</DropdownMenuLabel>
-              <DropdownMenuItem className={cn(darkMode ? "focus:bg-[#2f2f2f] focus:text-background" : "focus:bg-[#ebeced]")} asChild>
+              <DropdownMenuItem className={cn(darkMode ? "focus:bg-[#2f2f2f] focus:text-background" : "focus:bg-[#eff2f3]")} asChild>
                 <button
                   className={cn('w-full text-left cursor-pointer text-sm flex items-center',darkMode && "text-background")} 
                   onClick={handleSetLightMode}
@@ -50,7 +50,7 @@ export default function ThemeToggler() {
                   </span>
                 </button>
               </DropdownMenuItem>
-              <DropdownMenuItem className={cn(darkMode ? "focus:bg-[#2f2f2f] focus:text-background" : "focus:bg-[#ebeced]")} asChild>
+              <DropdownMenuItem className={cn(darkMode ? "focus:bg-[#2f2f2f] focus:text-background" : "focus:bg-[#eff2f3]")} asChild>
                 <button
                   className={cn('w-full text-left cursor-pointer text-sm flex items-center',darkMode && "text-background")} 
                   onClick={handleSetDarkMode}

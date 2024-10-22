@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { FrameIcon } from '@radix-ui/react-icons'
 import { FiChevronRight } from "react-icons/fi";
 import { BsLayoutSidebar } from "react-icons/bs";
+import { RiFlowerFill } from "react-icons/ri";
 
 import { motion } from "framer-motion"
  
@@ -40,7 +41,10 @@ export default function Sidebar() {
         className={cn('border-r-2 border-color bg-foreground dark:bg-background transition')}
       >
         <div className={cn('h-16 border-b-2 border-color px-4 flex items-center justify-between font-semibold text-xl', !showSideBar && "flex flex-col items-center justify-center")}>
-          <span className={cn(!showSideBar && "hidden")}>Tonnio</span>
+          <div className={cn("flex items-center gap-2", !showSideBar && "hidden")}>
+            <RiFlowerFill className='size-8 text-primary' />
+            <span className='font-bold'>Tonnio</span>
+          </div>
           <button 
            onClick={()=> setShowSidebar(prev=>!prev)} className='font-semibold transition hover:bg-muted dark:hover:bg-foreground h-8 aspect-square grid place-items-center rounded-md'>
             <BsLayoutSidebar className='w-4 h-4'/>
