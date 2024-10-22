@@ -42,7 +42,6 @@ export default function NewOrganizationForm() {
     const {
         register,
         formState: {errors},
-        reset,
         handleSubmit
     } = useForm<newOrgType>({
         resolver: zodResolver(newOrgSchema)
